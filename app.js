@@ -21,8 +21,37 @@ db.once("open", () => {
 const Todo = require("./models/todo2");
 
 //設定路由
+// todo 首頁
 app.get("/", (req, res) => {
   res.send("hi 123");
+});
+// 列出全部todo
+app.get("/todos", (req, res) => {
+  res.send("列出所有");
+});
+// 新增一筆todo頁面
+app.get("/todos/new", (req, res) => {
+  res.send("新增todo頁面");
+});
+// 顯示一筆 Todo 的詳細內容
+app.get("/todos/:id", (req, res) => {
+  res.send("顯示todo的詳細內容");
+});
+// 新增一筆  Todo
+app.post("/todos", (req, res) => {
+  res.send("建立todo");
+});
+// 修改 Todo 頁面
+app.get("/todos/:id/edit", (req, res) => {
+  res.send("修改todo頁面");
+});
+// 修改 Todo
+app.post("/todos/:id", (req, res) => {
+  res.send("修改todo");
+});
+// 刪除 Todo
+app.post("/todos/:id/delete", (req, res) => {
+  res.send("刪除 todo");
 });
 
 //設定 express port 3000
