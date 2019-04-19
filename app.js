@@ -28,7 +28,10 @@ const Todo = require("./models/todo2");
 //設定路由
 // todo 首頁
 app.get("/", (req, res) => {
-  return res.render("index");
+  Todo.find((err, todos) => {
+    if (err) return console.error(err);
+    return res.render("index", { todos: todos });
+  });
 });
 // 列出全部todo
 app.get("/todos", (req, res) => {
