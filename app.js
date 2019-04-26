@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//設定 method-override
+//設定method-override
 app.use(methodOverride("_method"));
 
 //mongoose 連線
